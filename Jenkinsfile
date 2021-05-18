@@ -1,25 +1,24 @@
-pipeline{
+
+
+pipeline {
     agent any
-    stages{
-        stage ('compile'){
-            steps{
-                sh 'mvn compile'
+
+    stages {
+        stage('Build') {
+            steps {
+                echo 'Building..'
             }
         }
-        stage ('test'){
-            steps{
-                sh 'mvn test'
+        stage('Test') {
+            steps {
+                echo 'Testing..'
             }
         }
-        stage ('package'){
-            steps{
-                sh 'mvn package'
-            }
-        }
-        stage ('deploy'){
-            steps{
-                echo 'mvn deploy'
+        stage('Deploy') {
+            steps {
+                echo 'Deploying....'
             }
         }
     }
 }
+
